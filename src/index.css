@@ -1,0 +1,300 @@
+/* ===== Comics Theme Tokens ===== */
+
+:root {
+  --bg: #FFFEF7;
+  --bg-alt: #FFF9E6;
+  --panel: #FFFFFF;
+  --ink: #1A1A2E;
+  --ink-muted: #4A4A5F;
+  --ink-faint: #9090A0;
+
+  --comic-red: #E8352E;
+  --comic-blue: #2B7CE9;
+  --comic-yellow: #FFD23F;
+  --comic-green: #2EAA4F;
+  --comic-purple: #7B4FD3;
+  --comic-orange: #F97316;
+
+  --outline: #1A1A2E;
+  --outline-w: 3px;
+  --shadow-color: #1A1A2E;
+  --shadow-offset: 5px;
+
+  --halftone-color: rgba(26, 26, 46, 0.04);
+  --halftone-size: 4px;
+  --halftone-spacing: 12px;
+}
+
+[data-theme="dark"] {
+  --bg: #16162A;
+  --bg-alt: #1E1E38;
+  --panel: #222240;
+  --ink: #F0F0F8;
+  --ink-muted: #B0B0C8;
+  --ink-faint: #6A6A88;
+
+  --comic-red: #FF6B6B;
+  --comic-blue: #60A5FA;
+  --comic-yellow: #FCD34D;
+  --comic-green: #34D399;
+  --comic-purple: #A78BFA;
+  --comic-orange: #FB923C;
+
+  --outline: #E0E0F0;
+  --outline-w: 3px;
+  --shadow-color: #000000;
+
+  --halftone-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== Reset ===== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Comic Neue', cursive, system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Halftone dot pattern */
+  background-image: radial-gradient(circle, var(--halftone-color) var(--halftone-size), transparent var(--halftone-size));
+  background-size: var(--halftone-spacing) var(--halftone-spacing);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Comic Components ===== */
+
+/* -- Panel (card) -- */
+.comic-panel {
+  background: var(--panel);
+  border: var(--outline-w) solid var(--outline);
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+              background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.comic-panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--shadow-color);
+}
+
+/* -- Speech bubble -- */
+.speech-bubble {
+  position: relative;
+  background: var(--panel);
+  border: var(--outline-w) solid var(--outline);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: var(--outline);
+  border-bottom: none;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 42px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--panel);
+  border-bottom: none;
+  z-index: 1;
+}
+
+/* -- Section heading -- */
+.section-title {
+  font-family: 'Bangers', cursive;
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: var(--ink);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--comic-red);
+}
+
+/* -- Comic chip / tag -- */
+.comic-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  font-family: 'Bangers', cursive;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 2px solid var(--outline);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.comic-chip:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+/* Chip color fills */
+.chip-red { background: var(--comic-red); color: #fff; border-color: var(--outline); }
+.chip-blue { background: var(--comic-blue); color: #fff; border-color: var(--outline); }
+.chip-green { background: var(--comic-green); color: #fff; border-color: var(--outline); }
+.chip-purple { background: var(--comic-purple); color: #fff; border-color: var(--outline); }
+.chip-yellow { background: var(--comic-yellow); color: var(--ink); border-color: var(--outline); }
+
+/* -- Starburst / POW accent -- */
+.starburst {
+  position: relative;
+  display: inline-block;
+}
+
+/* -- Icon button -- */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  color: var(--ink-muted);
+  transition: all 0.15s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--outline);
+  background: var(--comic-yellow);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+  transform: translate(-1px, -1px);
+}
+
+/* ===== Layout ===== */
+
+.page-wrapper {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 64px 0;
+  position: relative;
+}
+
+/* ===== Panel Divider ===== */
+
+.comic-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.comic-divider-line {
+  width: 120px;
+  height: var(--outline-w);
+  background: var(--outline);
+  position: relative;
+}
+
+.comic-divider-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--comic-yellow);
+  border: 2px solid var(--outline);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== Scroll Reveal ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
