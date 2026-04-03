@@ -1,0 +1,111 @@
+{
+  "personal": {
+    "name": "Harsh Kumar",
+    "tagline": "Backend Developer",
+    "about": "I am a backend developer. Proficient in Rust, Python and Shell scripting. I also have a knowledge of C/C++. I have a keen interest in understanding the inner workings of technologies, regardless of their nature. I'm skilled in PostgreSQL, Kubernetes, Docker, DuckDB, Redis and many more.",
+    "contact": {
+      "email": "harsh1508kumar@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/harsh-kumar-1873b410a/",
+      "github": "https://github.com/aarshivv"
+    }
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "314e Corporation",
+      "role": "SE: Research and Development",
+      "type": "Full time",
+      "startDate": "08/2024",
+      "endDate": "present",
+      "highlights": [
+        "Benchmarked and integrated TimescaleDB to optimize time-series tables in PostgreSQL, improving query performance.",
+        "Contributed in automation of tenant onboarding process based on k8s, keycloak etc using python.",
+        "Implemented OpenTelemetry metrics for Python FastAPI servers and Temporal workers, using VictoriaMetrics as collector and Grafana for dashboard visualization.",
+        "Added OpenTelemetry-based distributed tracing to backend services, linking traceIDs and spanIDs for end-to-end monitoring and root cause analysis.",
+        "POC and implement envoy based external authentication gRPC server written in rust plugged to istio-envoy in k8s.",
+        "POC and deliver use of gRPC request over HTTP with envoy."
+      ],
+      "tags": ["TimescaleDB", "OpenTelemetry", "Kubernetes", "gRPC", "Envoy", "Python", "Rust"]
+    },
+    {
+      "id": "exp-2",
+      "company": "314e Corporation",
+      "role": "SE: Backend Engineer (Rust Lang)",
+      "type": "Full time",
+      "startDate": "08/2022",
+      "endDate": "07/2024",
+      "highlights": [
+        "Developed scalable backend servers in Rust using crates like tokio, axum (web framework), actix (actor model), arrow-rs, and more.",
+        "Implemented core features including advanced search, document export, document upload, and large-scale parquet data processing.",
+        "Automated operational tasks by writing custom shell scripts.",
+        "Worked extensively with PostgreSQL, Redis, and DuckDB for high-performance data storage and retrieval."
+      ],
+      "tags": ["Rust", "Tokio", "Axum", "Actix", "PostgreSQL", "Redis", "DuckDB"]
+    },
+    {
+      "id": "exp-3",
+      "company": "314e Corporation",
+      "role": "Software Engineer Intern",
+      "type": "Internship",
+      "startDate": "01/2022",
+      "endDate": "07/2022",
+      "highlights": [
+        "Built sample backend servers replicating basic banking functionality using Rust and Python (FastAPI)."
+      ],
+      "tags": ["Rust", "Python", "FastAPI"]
+    }
+  ],
+  "openSource": [
+    {
+      "project": "libobs-rs",
+      "description": "Rust bindings for OBS Studio's libobs C API",
+      "repoUrl": "https://github.com/libobs-rs/libobs-rs",
+      "contributions": [
+        {
+          "pr": 7,
+          "title": "Fixed an issue where monitor capture consistently resulted in a black screen",
+          "url": "https://github.com/libobs-rs/libobs-rs/pull/7"
+        },
+        {
+          "pr": 11,
+          "title": "Implemented new functionalities to support advanced OBS Studio capabilities within Rust applications",
+          "url": "https://github.com/libobs-rs/libobs-rs/pull/11"
+        },
+        {
+          "pr": 15,
+          "title": "Additional OBS Studio capability support in Rust",
+          "url": "https://github.com/libobs-rs/libobs-rs/pull/15"
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "name": "Programming Languages",
+        "icon": "code",
+        "items": ["Rust", "Python", "C", "C++"]
+      },
+      {
+        "name": "Web Frameworks",
+        "icon": "web",
+        "items": ["FastAPI", "Axum", "Actix"]
+      },
+      {
+        "name": "Databases",
+        "icon": "database",
+        "items": ["PostgreSQL", "MySQL", "Redis", "DuckDB", "TimescaleDB"]
+      },
+      {
+        "name": "Tools & Infrastructure",
+        "icon": "tools",
+        "items": ["Git", "Docker", "Kubernetes"]
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "BE, Computer Science and Engineering"
+    }
+  ]
+}
